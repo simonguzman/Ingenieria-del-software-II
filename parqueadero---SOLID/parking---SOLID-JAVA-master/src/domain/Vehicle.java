@@ -9,7 +9,6 @@ public class Vehicle {
         this.type = type;
     }
 
-    //** SETTERS && GETTERS
     public String getPlate() { return this.plate; }
     public void setPlate(String plate) { this.plate = plate; }
 

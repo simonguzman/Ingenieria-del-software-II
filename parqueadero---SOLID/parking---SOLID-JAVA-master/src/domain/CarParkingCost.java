@@ -6,15 +6,15 @@ import java.time.LocalDateTime;
 import infrac.Utils;
 
 public class CarParkingCost implements IParkingCost {
-    
+
     @Override
-    public long calculateCost(LocalDateTime input, LocalDateTime output) {
-        double varDuracionHoras = Duration.between(input, output).getSeconds();
-        varDuracionHoras = varDuracionHoras / 3600;
-        if (varDuracionHoras < 1) {
-            return Utils.redondear(valorMinCar);
+    public long calcularCosto(LocalDateTime input, LocalDateTime output) {
+        double varHoras = Duration.between(input, output).getSeconds();
+        varHoras = varHoras / 3600;
+        if (varHoras < 1) {
+            return Utils.redondearValor(valorMinimoCar);
         } else{
-            return Utils.redondear((long) (valorFijoCar + ((varDuracionHoras - 1)*valorAdicionCar)));
+            return Utils.redondearValor((long) (valorCar + ((varHoras - 1)*valorAdicionalCar)));
         }
     }
     

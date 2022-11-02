@@ -15,11 +15,11 @@ public class App {
         LocalDateTime output = LocalDateTime.of(2021, Month.FEBRUARY, 22, 19, 30);
         
         IVehicleRepository repo = RepositoryFactory.getInstance().getRepository("default");
-        Service service = new Service(repo); // Inyección de dependencias
+        Service service = new Service(repo); 
         
         long result = service.calculateParkingCost(veh, input, output);
         
-        System.out.println("Valor a pagar por la moto: " + result);
+        System.out.println("Total a pagar(MOTO): " + result);
         service.saveVehicle(veh);
         veh = new Vehicle("JNK-124", TypeEnum.CAR);
         service.saveVehicle(veh);

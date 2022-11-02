@@ -7,13 +7,13 @@ import infrac.Utils;
 public class MotoParkingCost implements IParkingCost {
 
     @Override
-    public long calculateCost(LocalDateTime input, LocalDateTime output) {
-      double varDuracionHoras = Duration.between(input, output).getSeconds();
-      varDuracionHoras = varDuracionHoras / 3600;
-      if (varDuracionHoras < 1) {
-          return Utils.redondear(valorMinMoto);
+    public long calcularCosto(LocalDateTime input, LocalDateTime output) {
+      double varHoras = Duration.between(input, output).getSeconds();
+      varHoras = varHoras / 3600;
+      if (varHoras < 1) {
+          return Utils.redondearValor(valorMinimoMoto);
       } else{
-          return Utils.redondear((long) (valorFijoMoto + ((varDuracionHoras - 1)*valorAdicionMoto)));
+          return Utils.redondearValor((long) (valorMoto + ((varHoras - 1)*valorAdicionalMoto)));
       }
     }
 }

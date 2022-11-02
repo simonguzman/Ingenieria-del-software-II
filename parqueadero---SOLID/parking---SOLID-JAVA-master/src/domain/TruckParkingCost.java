@@ -8,14 +8,14 @@ import infrac.Utils;
 public class TruckParkingCost implements IParkingCost {
 
     @Override
-    public long calculateCost(LocalDateTime input, LocalDateTime output) {
-        double varDuracionHoras = Duration.between(input, output).toHours();
-        if (varDuracionHoras <= 12) {
-            return Utils.redondear(valorMinTruck);
-        } else if(varDuracionHoras <= 24){
-            return Utils.redondear(valorFijoTruck);
+    public long calcularCosto(LocalDateTime input, LocalDateTime output) {
+        double varHoras = Duration.between(input, output).toHours();
+        if (varHoras <= 12) {
+            return Utils.redondearValor(valorMinimoTruck);
+        } else if(varHoras <= 24){
+            return Utils.redondearValor(valorTruck);
         } else{
-            return Utils.redondear((long) (valorFijoTruck + (((varDuracionHoras - 24) / 24) * valorAdicionTruck)));
+            return Utils.redondearValor((long) (valorTruck + (((varHoras - 24) / 24) * valorAdicionalTruck)));
         }
     }  
 }

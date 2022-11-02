@@ -3,14 +3,14 @@ package domain;
 import java.time.LocalDateTime;
 
 public interface IParkingCost {
-    static final long valorFijoMoto = 2000;
-    static final long valorMinMoto = 1000;
-    static final long valorAdicionMoto = 1000;
-    static final long valorFijoCar = 4000;
-    static final long valorMinCar = 2000;
-    static final long valorAdicionCar = 2000;
-    static final long valorFijoTruck = 15000;
-    static final long valorMinTruck = 10000;
-    static final long valorAdicionTruck = 15000;
-    long calculateCost(LocalDateTime input, LocalDateTime output);
+    static final long valorMoto = 2000;
+    static final long valorMinimoMoto = 1000;
+    static final long valorAdicionalMoto = 1000;
+    static final long valorCar = 4000;
+    static final long valorMinimoCar = 2000;
+    static final long valorAdicionalCar = 2000;
+    static final long valorTruck = 15000;
+    static final long valorMinimoTruck = 10000;
+    static final long valorAdicionalTruck = 15000;
+    long calcularCosto(LocalDateTime input, LocalDateTime output);
 }

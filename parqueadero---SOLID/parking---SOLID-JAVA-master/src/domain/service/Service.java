@@ -21,7 +21,7 @@ public class Service {
      * @param output
      */
     public long calculateParkingCost(Vehicle vehicle, LocalDateTime input, LocalDateTime output){
-        return ParkingCostFactory.getParkingCost(vehicle.getType()).calculateCost(input, output);
+        return ParkingCostFactory.getParkingCost(vehicle.getType()).calcularCosto(input, output);
     }
 
     /**

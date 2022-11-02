@@ -1,9 +1,9 @@
 package infrac;
 public class Utils {
 
-    public static long redondear(long prmValue){
-        double varValue = prmValue;
-        varValue = varValue / 100;
-        return (long) (Math.ceil(varValue) * 100);
+    public static long redondearValor(long prmValor){
+        double varValor = prmValor;
+        varValor = varValor / 100;
+        return (long) (Math.ceil(varValor) * 100);
     }
 }
